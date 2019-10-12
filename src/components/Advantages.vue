@@ -1,9 +1,8 @@
 <template>
 
-    <div>
+    <div class="advantages-wrapper">
         <div class="gradient-border"></div>
         <div class="advantages">
-
             <div class="container">
                 <div class="row row-no-gutters">
                     <div class="col-md-5">
@@ -33,7 +32,6 @@
         </div>
         <div class="gradient-border"></div>
     </div>
-
 </template>
 
 <script>
@@ -44,7 +42,9 @@ export default {
 
 <style scoped lang="scss">
 
-
+    .advantages-wrapper {
+        margin: 200px 0;
+    }
     .advantages {
         background: $c-gray-dark;
         height: 561px;

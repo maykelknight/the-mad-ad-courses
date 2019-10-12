@@ -5,6 +5,7 @@
         <Services></Services>
         <CourseDates></CourseDates>
         <Advantages></Advantages>
+        <Team></Team>
     </div>
 </template>
 
@@ -14,6 +15,7 @@ import Banner from "./components/Banner";
 import Services from "./components/Services"
 import CourseDates from "./components/CourseDates"
 import Advantages from "./components/Advantages"
+import Team from "./components/Team"
 
 export default {
     name: 'app',
@@ -23,6 +25,7 @@ export default {
         Navbar,
         CourseDates,
         Advantages,
+        Team,
     }
 }
 </script>
