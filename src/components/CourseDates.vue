@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-4">
                 <div class="course-box">
-                    <div class="course-box__title">29 październik 2019</div>
+                    <div class="course-box__title">26 listopad 2019</div>
                     <div class="course-box__location">Miejsce szkolenia</div>
                     <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
                         orci, id tempor tortor eros vestibulum justo.
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4">
                 <div class="course-box">
-                    <div class="course-box__title">29 październik 2019</div>
+                    <div class="course-box__title">1 grudzień 2019</div>
                     <div class="course-box__location">Miejsce szkolenia</div>
                     <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
                         orci, id tempor tortor eros vestibulum justo.
@@ -80,7 +80,6 @@ export default {
             }
 
             &__description {
-                font-weight: normal;
                 font-size: 15px;
                 line-height: 24px;
                 text-align: center;
