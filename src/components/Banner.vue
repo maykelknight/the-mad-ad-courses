@@ -1,5 +1,6 @@
 <template>
     <section class="container banner">
+
         <div class="row row-no-gutters">
             <div class="col-md-6">
                 <div class="banner-heading-wrapper">
@@ -8,7 +9,7 @@
                             Szkolenia z pazurem
                         </h1>
                         <div class="banner-heading__button">
-                           <button type="button" class="btn">Wybierz termin szkoleń</button>
+                            <button type="button" class="btn">Wybierz termin szkoleń</button>
                         </div>
                     </div>
                 </div>
@@ -18,6 +19,17 @@
                     <p class="box__text">#be_mad</p>
                 </div>
             </div>
+        </div>
+
+        <div class="banner-description">
+            <p>
+                Facebook nie ma przed nami tajemnic. Zajmujemy się planowaniem i wdrażaniem strategii obecności w social mediach oraz prowadzeniem kampanii reklamowych online. Wspieramy firmy w
+                tych działaniach i szkolimy z tego zakresu. Proponujemy solidną dawkę wiedzy popartą inspirującymi przykładami oraz umiejętności, które wykorzystasz do promowania własnego biznesu.
+            </p>
+        </div>
+
+        <div class="divider">
+
         </div>
     </section>
 </template>
@@ -48,9 +60,23 @@ export default {
                     letter-spacing: -2.647059px;
                     width: 500px;
                 }
+
+                &__button {
+                    margin-top: 37px;
+                }
             }
         }
 
+        .banner-description {
+            margin-top: 184px;
+
+            p {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 36px;
+                text-align: center;
+            }
+        }
 
         .box {
             width: 570px;

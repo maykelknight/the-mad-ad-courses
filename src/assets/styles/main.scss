@@ -13,14 +13,16 @@
   }
 }
 
-h1 {
+h1,h2,h3,h4,h5 {
   margin: 0;
 }
 
 @import url('https://rsms.me/inter/inter.css');
-html, h1, button {
+
+*, html, h1, h2, h3, h4, h5, button, p, span, li {
   font-family: 'Inter', sans-serif;
 }
+
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter', 'Inter var', sans-serif; }
 }
@@ -28,6 +30,15 @@ html, h1, button {
 .row-no-padding {
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: -1.17647px;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -38,9 +49,22 @@ html, h1, button {
   outline: none;
   color: $c-black2;
   font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
   text-align: center;
   text-transform: uppercase;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 1px;
+  background: linear-gradient(270deg, $c-primary , $c-secondary);
+}
+
+.divider {
+  width: 84px;
+  height: 4px;
+  background: linear-gradient(270deg, $c-primary , $c-secondary);
+  display: block;
+  margin: 0 auto;
+}
+
+.with-gradient {
   background: linear-gradient(270deg, $c-primary , $c-secondary);
 }
