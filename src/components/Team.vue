@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <h3>POZNAJ NASZE PROWADZĄCE</h3>
+        <div class="divider"></div>
+
         <div class="row box-background">
             <div class="team-members-wrapper">
                 <div class="team-member">
@@ -80,6 +83,11 @@ export default {
         border: 10px solid $c-gray2;
         width: 800px;
         margin: 0 auto;
+    }
+
+    .divider {
+        margin-top: 45px;
+        margin-bottom: 100px;
     }
 
     .team-members-wrapper {

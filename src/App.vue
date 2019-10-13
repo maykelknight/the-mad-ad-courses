@@ -4,6 +4,7 @@
         <Banner></Banner>
         <Services></Services>
         <CourseDates></CourseDates>
+        <Testimonials></Testimonials>
         <Advantages></Advantages>
         <Team></Team>
         <Contact></Contact>
@@ -20,6 +21,7 @@ import Advantages from "./components/Advantages"
 import Team from "./components/Team"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+import Testimonials from "./components/Testimonials"
 
 export default {
     name: 'app',
@@ -32,6 +34,7 @@ export default {
         Team,
         Contact,
         Footer,
+        Testimonials,
     }
 }
 </script>

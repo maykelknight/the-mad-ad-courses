@@ -43,7 +43,7 @@ export default {
 <style scoped lang="scss">
 
     .advantages-wrapper {
-        margin: 200px 0;
+        margin-bottom: 200px;
     }
     .advantages {
         background: $c-gray-dark;

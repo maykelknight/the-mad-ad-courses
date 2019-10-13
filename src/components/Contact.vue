@@ -28,7 +28,15 @@
                                   required="required"
                                   class="form-input text-area">
                         </textarea>
-                        <input data-wait="Please wait..." id="submitBtn" type="button" class="btn submit-btn" value="WYŚLIJ WIADOMOŚĆ">
+                        <input data-wait="Przesyłanie..." id="submitBtn" type="button" class="btn submit-btn" value="WYŚLIJ WIADOMOŚĆ">
+
+                        <div class="form-message">
+                            Dziękujemy! Twoja wiadomość została pomyślnie dostarczona.
+                        </div>
+
+                        <div class="form-message -error">
+                            Coś poszło nie tak! Proszę wypełnić wszystkie obowiązkowe pola.
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-3 col-md-offset-1">
@@ -107,14 +115,9 @@ export default {
                 vertical-align: middle;
                 border: 1px solid #cccccc;
 
-
-
                 &.text-area {
                     min-height: 280px;
                 }
-
-
-
             }
             .submit-btn {
                 margin-top: 24px;
@@ -145,5 +148,19 @@ export default {
             }
         }
 
+        .form-message {
+            background-color: $c-white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Inter Light', Arial, sans-serif;
+            color: #aeb7c1;
+            margin-top: 26px;
+
+            &.-error {
+                font-family: 'Inter Light', Arial, sans-serif;
+                color: #ff6161;
+                background-color: #ffdede;
+            }
+        }
     }
 </style>
