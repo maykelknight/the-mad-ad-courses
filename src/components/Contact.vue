@@ -2,6 +2,7 @@
     <div class="container">
         <div class="contact-section">
             <h2>LET’S TALK TOGETHER</h2>
+
             <div class="row">
                 <div class="col-md-8">
                     <form data-name="Email Form" id="email-form" method="post" name="email-form" class="contact-form">
@@ -76,7 +77,6 @@ export default {
 
 <style scoped lang="scss">
     .contact-section {
-        height: 200px;
         margin-top: 196px;
 
         h2 {

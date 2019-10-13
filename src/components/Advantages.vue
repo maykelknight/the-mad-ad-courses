@@ -47,7 +47,7 @@ export default {
     }
     .advantages {
         background: $c-gray-dark;
-        height: 561px;
+        /*height: 561px;*/
 
         &__description {
             margin-left: 20px;

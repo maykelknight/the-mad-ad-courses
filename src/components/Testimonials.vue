@@ -53,9 +53,7 @@ export default {
 
                 &__details {
                     text-align: center;
-                    background: url('~@/assets/images/rectangle.svg');
-                    background-repeat: no-repeat;
-                    background-position: center;
+                    background: url('~@/assets/images/rectangle.svg') no-repeat center;
                     max-width: 700px;
                     height: 400px;
 

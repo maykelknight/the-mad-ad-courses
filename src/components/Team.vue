@@ -4,7 +4,9 @@
         <div class="divider"></div>
 
         <div class="row box-background">
+
             <div class="team-members-wrapper">
+
                 <div class="team-member">
                     <div class="team-member__photo">
                         <img alt="team-member" src="../assets/images/daria.png">
@@ -81,7 +83,7 @@ export default {
 
     .box-background {
         border: 10px solid $c-gray2;
-        width: 800px;
+        max-width: 800px;
         margin: 0 auto;
     }
 
@@ -152,7 +154,66 @@ export default {
                 }
             }
         }
+    }
 
+    @media (max-width: $b-xl) {
+        .team-members-wrapper {
+            height: auto;
+
+            .team-member {
+                height: initial;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                &__photo {
+                    img {
+                        position: initial;
+                        width: 100%;
+                    }
+                }
+
+                &__description {
+                    position: initial;
+                    max-width: initial;
+                    height: auto;
+                    padding: 0 20px;
+
+                    &__name {
+                        line-height: 50px;
+                    }
+                    &__details {
+                        width: 100%;
+                        max-width: 600px;
+                    }
+                }
+
+
+                &.-right {
+                    flex-direction: column-reverse;
+
+                    .team-member__photo {
+                        position: relative;
+                        right: 0;
+
+                        img {
+                            position: initial;
+                            width: 100%;
+                        }
+                    }
+
+                    .team-member__description {
+                        text-align: center;
+                        position: initial;
+                        max-width: initial;
+                    }
+                }
+
+
+            }
+        }
     }
 
 </style>
