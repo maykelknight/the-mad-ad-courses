@@ -101,4 +101,17 @@ export default {
             }
         }
     }
+    @media (max-width: $b-lg) {
+        .course-dates {
+            .course-box {
+                margin-top: 50px;
+            }
+        }
+    }
+
+    @media (max-width: $b-sm) {
+        .course-dates {
+
+        }
+    }
 </style>

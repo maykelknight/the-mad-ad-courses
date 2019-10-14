@@ -119,4 +119,19 @@ export default {
             color: $c-black;
         }
     }
+
+    @media (max-width: $b-md) {
+        .service {
+            flex-direction: column;
+            margin-top: 60px;
+
+            .service-content {
+                margin-left: 0;
+
+                &__title {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
 </style>

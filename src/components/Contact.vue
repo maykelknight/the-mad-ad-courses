@@ -6,20 +6,20 @@
             <div class="row">
                 <div class="col-md-8">
                     <form data-name="Email Form" id="email-form" method="post" name="email-form" class="contact-form">
-                        <div class="flex mb30">
+                        <div class="flex">
                             <input id="form-name"
                                    maxlength="256"
                                    name="Imie"
                                    placeholder="Imię"
                                    required="required"
                                    type="text"
-                                   class="form-input mr30">
+                                   class="form-input mr30 mb30">
                             <input id="form-email"
                                    maxlength="256"
                                    name="Email"
                                    placeholder="Email"
                                    type="email"
-                                   class="form-input">
+                                   class="form-input mb30">
                         </div>
                         <textarea data-name="Tekst"
                                   id="form-text"
@@ -40,7 +40,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-3 col-md-offset-1">
+                <div class="col-md-3 col-md-offset-1 contact-items">
                     <div class="contact-item">
                         <div class="contact-item__label">NUMER KONTAKTOWY</div>
                         <div class="divider"></div>
@@ -119,6 +119,7 @@ export default {
                     min-height: 280px;
                 }
             }
+
             .submit-btn {
                 margin-top: 24px;
             }
@@ -160,6 +161,28 @@ export default {
                 font-family: 'Inter Light', Arial, sans-serif;
                 color: #ff6161;
                 background-color: #ffdede;
+            }
+        }
+    }
+    @media (max-width: $b-lg) {
+        .contact-items {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: $b-sm) {
+
+        .contact-section {
+            h2 {
+                font-size: 50px;
+            }
+            .contact-items {
+                display: block;
+            }
+            .flex {
+                flex-direction: column;
             }
         }
     }

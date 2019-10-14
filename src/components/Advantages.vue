@@ -45,9 +45,10 @@ export default {
     .advantages-wrapper {
         margin-bottom: 200px;
     }
+
     .advantages {
         background: $c-gray-dark;
-        /*height: 561px;*/
+        height: 561px;
 
         &__description {
             margin-left: 20px;
@@ -115,4 +116,40 @@ export default {
         transform: translateY(-90px);
     }
 
+    @media (max-width: $b-xl) {
+        .box {
+            height: 571px;
+            width: initial;
+            transform: none;
+        }
+        .advantages {
+            height: auto
+        }
+    }
+
+    @media (max-width: $b-sm) {
+        .box {
+            width: auto;
+            height: 250px;
+
+            img {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        .advantages {
+            &__description {
+                margin-top: 30px;
+
+                &__title {
+                    text-align: center;
+                }
+
+                &__wrapper {
+                    height: auto;
+                }
+            }
+        }
+    }
 </style>
