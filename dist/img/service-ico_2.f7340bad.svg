@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="289px" height="228px" viewBox="0 0 289 228" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <linearGradient x1="1" y1="0.5" x2="0.05321551" y2="0.5" id="gradient_1">
+      <stop offset="0" stop-color="#FFEB3F" />
+      <stop offset="1" stop-color="#F18C35" />
+    </linearGradient>
+    <path d="M0 0L286 0L286 225L0 225L0 0Z" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="ico_1" transform="translate(1.411133 1.411133)">
+    <g id="Group" transform="translate(95 121)" />
+    <g id="award" transform="translate(49 39)">
+      <path d="M0 0L19.3742 0L19.3742 6.81152L0 6.81152L0 0Z" transform="translate(48.68311 124.5703)" id="Rectangle" fill="#373634" stroke="none" />
+      <path d="M12.3115 0.933791L10.1268 28.4573C10.0859 28.9729 9.63339 29.3908 9.11617 29.3908L0.9365 29.3908C0.419285 29.3908 0 29.8101 0 30.3273L0 58.5006C0 59.0179 0.419285 59.4371 0.9365 59.4371L44.6251 59.4371C45.1423 59.4371 45.5616 59.0179 45.5616 58.5006L45.5616 30.3273C45.5616 29.8101 45.1423 29.3908 44.6251 29.3908L36.4454 29.3908C35.9282 29.3908 35.4757 28.9729 35.4348 28.4573L33.2501 0.933564C33.2092 0.417971 32.7567 4.579e-06 32.2395 1.02275e-05L13.3221 0.000216823C12.8049 0.000222472 12.3524 0.418198 12.3115 0.933791ZM19.5748 5.02854L17.0099 28.4599C16.9536 28.974 17.3273 29.3908 17.8445 29.3908L27.7169 29.3908C28.2341 29.3908 28.6077 28.974 28.5515 28.4599L25.9866 5.02854C25.9303 4.51439 25.5136 3.90249 25.0558 3.66182L23.6096 2.90156C23.1518 2.66089 22.4096 2.66089 21.9518 2.90156L20.5056 3.66182C20.0478 3.90249 19.6311 4.51439 19.5748 5.02854ZM37.8136 52.6256L7.74802 52.6256C7.23081 52.6256 6.81152 52.2063 6.81152 51.6891L6.81152 37.1389C6.81152 36.6216 7.23081 36.2024 7.74802 36.2024L37.8136 36.2024C38.3308 36.2024 38.7501 36.6216 38.7501 37.1389L38.7501 51.6891C38.7501 52.2063 38.3308 52.6256 37.8136 52.6256Z" transform="translate(35.59082 83.5625)" id="Shape" fill="#373634" fill-rule="evenodd" stroke="none" />
+      <path d="M13.0935 0L46.9084 0C54.136 0.00980935 59.9922 5.866 60 13.0935L60 46.9084C59.9902 54.134 54.134 59.9922 46.9084 60L13.0935 60C5.866 59.9922 0.00980925 54.134 0 46.9084L0 13.0935C0.00980925 5.866 5.866 0.00980935 13.0935 0ZM46.9083 51.4284C49.4038 51.4265 51.4265 49.4038 51.4284 46.9083L51.4284 13.0934C51.4265 10.5959 49.4038 8.57325 46.9083 8.57129L13.0934 8.57129C10.5959 8.57325 8.57325 10.5959 8.57129 13.0934L8.57129 46.9083C8.57325 49.4038 10.5959 51.4265 13.0934 51.4284L25.7141 51.4284L25.7141 29.7301C25.722 22.7811 31.3526 17.1506 38.3015 17.1427L42.857 17.1427L42.857 25.7141L38.3015 25.7141C36.0846 25.7161 34.2875 27.5132 34.2856 29.7301L34.2856 34.2856L42.857 34.2856L42.857 42.857L34.2856 42.857L34.2856 51.4284L46.9083 51.4284Z" transform="translate(28 28)" id="Shape" fill="url(#gradient_1)" fill-rule="evenodd" stroke="none" />
+      <path d="M-2.27457e-13 2.50111e-12L11 11" transform="translate(7 14)" id="Path-2" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M0 0L12 13" transform="matrix(-1 0 0 1 111 12)" id="Path-2-Copy-3" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M2.92516e-13 0.5L18 0.5" transform="matrix(-1 0 0 1 119 49)" id="Path-2-Copy-4" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M0 5L18 -1.81888e-12" transform="matrix(-1 0 0 1 119 76)" id="Path-2-Copy-7" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M2.92516e-13 0.5L18 0.5" transform="matrix(-1 0 0 1 18 49)" id="Path-2-Copy-5" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M2.92516e-13 -1.81888e-12L18 5" transform="matrix(-1 0 0 1 18 76)" id="Path-2-Copy-6" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M0 0L3 15" transform="translate(43 2)" id="Path-2-Copy" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+      <path d="M6 0L-1.16762e-14 17" transform="translate(77 0)" id="Path-2-Copy-2" fill="none" stroke="#373634" stroke-width="2.82209945" stroke-linecap="round" />
+    </g>
+    <g id="Rectangle">
+      <g clip-path="url(#clip_1)">
+        <use xlink:href="#path_1" fill="none" stroke="#373634" stroke-width="10" />
+      </g>
+    </g>
+  </g>
+</svg>
