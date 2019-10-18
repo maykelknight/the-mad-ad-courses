@@ -1,6 +1,7 @@
 @import './variables/colors';
 @import './variables/spacing';
 @import './variables/breakpoints';
+@import 'tiny-slider/src/tiny-slider';
 
 .main-content {
   background: black;
@@ -22,6 +23,10 @@ h1, h2, h3, h4, h5 {
 
 *, html, h1, h2, h3, h4, h5, button, p, span, li {
   font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @supports (font-variation-settings: normal) {

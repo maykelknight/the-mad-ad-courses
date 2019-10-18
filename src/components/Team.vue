@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container team-section" id="team-section">
         <h3>POZNAJ NASZE PROWADZĄCE</h3>
         <div class="divider"></div>
 
@@ -8,14 +8,15 @@
             <div class="team-members-wrapper">
 
                 <div class="team-member">
-                    <div class="team-member__photo">
+                    <div class="team-member__photo" data-aos="fade-left" >
                         <img alt="team-member" src="../assets/images/daria.png">
                     </div>
-                    <div class="team-member__description">
+                    <div class="team-member__description"  data-aos="fade-right"  >
                         <div class="team-member__description__wrapper">
                             <p class="team-member__description__name">
                                 Daria Śliż
                             </p>
+
                             <p class="team-member__description__position">
                                 Co-founder at The Mad Ad
                             </p>
@@ -30,7 +31,7 @@
 
                 <div class="team-member -right">
                     <div class="team-member__description">
-                        <div class="team-member__description__wrapper">
+                        <div class="team-member__description__wrapper"  data-aos="fade-left" >
                             <p class="team-member__description__name">
                                 Magdalena Nykiel
                             </p>
@@ -44,16 +45,16 @@
                             </p>
                         </div>
                     </div>
-                    <div class="team-member__photo">
+                    <div class="team-member__photo" data-aos="fade-right" >
                         <img alt="team-member" src="../assets/images/magda.png">
                     </div>
                 </div>
 
                 <div class="team-member">
-                    <div class="team-member__photo">
+                    <div class="team-member__photo" data-aos="fade-left" >
                         <img alt="team-member" src="../assets/images/róża.png">
                     </div>
-                    <div class="team-member__description">
+                    <div class="team-member__description" data-aos="fade-right">
                         <div class="team-member__description__wrapper">
                             <p class="team-member__description__name">
                                 Róża Klimczak
@@ -81,6 +82,10 @@ export default {
 
 <style scoped lang="scss">
 
+    .team-section {
+        padding-top: 100px;
+        margin-bottom: 96px;
+    }
     .box-background {
         border: 10px solid $c-gray2;
         max-width: 800px;

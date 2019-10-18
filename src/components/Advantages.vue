@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="advantages__description__wrapper">
-                            <div class="advantages__description">
+                            <div class="advantages__description" data-aos="fade-left">
                                 <h5 class="advantages__description__title">
                                     Dlaczego warto szkolić się u nas?
                                 </h5>
@@ -43,7 +43,7 @@ export default {
 <style scoped lang="scss">
 
     .advantages-wrapper {
-        margin-bottom: 200px;
+        margin-bottom: 100px;
     }
 
     .advantages {
@@ -86,7 +86,7 @@ export default {
 
                     &:before {
                         content: "• ";
-                        color: $c-secondary; /* or whatever color you prefer */
+                        color: $c-secondary;
                         font-size: 20px;
                         margin-right: 10px;
                     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="contact-section">
         <div class="contact-section">
             <h2>LET’S TALK TOGETHER</h2>
 
@@ -40,7 +40,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-3 col-md-offset-1 contact-items">
+                <div class="col-md-3 col-md-offset-1 contact-items" data-aos="fade-left">
                     <div class="contact-item">
                         <div class="contact-item__label">NUMER KONTAKTOWY</div>
                         <div class="divider"></div>
@@ -77,7 +77,7 @@ export default {
 
 <style scoped lang="scss">
     .contact-section {
-        margin-top: 196px;
+        padding-top: 100px;
 
         h2 {
             font-weight: bold;

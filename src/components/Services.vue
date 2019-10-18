@@ -1,12 +1,22 @@
 <template>
-    <div class="container">
+    <div class="container" id="services-section">
+
+        <div class="banner-description">
+            <p>
+                Facebook nie ma przed nami tajemnic. Zajmujemy się planowaniem i wdrażaniem strategii obecności w social mediach oraz prowadzeniem kampanii reklamowych online. Wspieramy firmy w
+                tych działaniach i szkolimy z tego zakresu. Proponujemy solidną dawkę wiedzy popartą inspirującymi przykładami oraz umiejętności, które wykorzystasz do promowania własnego biznesu.
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
         <div class="service">
 
-            <div class="service-image">
+            <div class="service-image" data-aos="fade-right">
                 <img alt="mad-ad-logo" src="../assets/images/service-ico_1.svg">
             </div>
 
-            <div class="service-content">
+            <div class="service-content" data-aos="fade-left">
                 <h4 class="service-content__title">
                     FACEBOOK OD PODSTAW
                 </h4>
@@ -25,11 +35,11 @@
         </div>
 
         <div class="service">
-            <div class="service-image">
+            <div class="service-image" data-aos="fade-right">
                 <img alt="mad-ad-logo" src="../assets/images/service-ico_2.svg">
             </div>
 
-            <div class="service-content">
+            <div class="service-content" data-aos="fade-left">
                 <h4 class="service-content__title">
                     FACEBOOK DLA ZAAWANSOWANYCH
                 </h4>
@@ -46,7 +56,7 @@
             </div>
         </div>
 
-        <div class="box with-gradient">
+        <div class="box with-gradient" data-aos="zoom-in-up">
             <p class="box__symbol">@</p>
         </div>
     </div>
@@ -63,6 +73,17 @@ export default {
     .service {
         display: flex;
         margin-top: 150px;
+    }
+
+    .banner-description {
+        margin-top: 84px;
+
+        p {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+        }
     }
 
     .service-content {
@@ -109,6 +130,7 @@ export default {
         align-items: center;
         justify-content: center;
         margin-top: 165px;
+        margin-bottom: 45px;
 
         &__symbol {
             font-style: normal;

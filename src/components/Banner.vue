@@ -15,21 +15,10 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
-                <div class="box">
+                <div class="box" data-aos="zoom-out-up">
                     <p class="box__text">#be_mad</p>
                 </div>
             </div>
-        </div>
-
-        <div class="banner-description">
-            <p>
-                Facebook nie ma przed nami tajemnic. Zajmujemy się planowaniem i wdrażaniem strategii obecności w social mediach oraz prowadzeniem kampanii reklamowych online. Wspieramy firmy w
-                tych działaniach i szkolimy z tego zakresu. Proponujemy solidną dawkę wiedzy popartą inspirującymi przykładami oraz umiejętności, które wykorzystasz do promowania własnego biznesu.
-            </p>
-        </div>
-
-        <div class="divider">
-
         </div>
     </section>
 </template>
@@ -45,6 +34,7 @@ export default {
 
     .banner {
         margin-top: 75px;
+        margin-bottom: 100px;
 
         .banner-heading-wrapper {
             display: flex;
@@ -65,17 +55,6 @@ export default {
                 &__button {
                     margin-top: 37px;
                 }
-            }
-        }
-
-        .banner-description {
-            margin-top: 184px;
-
-            p {
-                font-weight: bold;
-                font-size: 24px;
-                line-height: 36px;
-                text-align: center;
             }
         }
 

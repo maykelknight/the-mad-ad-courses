@@ -1,10 +1,10 @@
 <template>
-    <div class="container course-dates ">
+    <div class="container course-dates" id="course-dates-section" >
         <h3>TERMINY NAJBLIŻSZYCH SZKOLEŃ</h3>
         <div class="divider"></div>
-        <div class="row">
+        <div class="row row-eq-height">
             <div class="col-md-4">
-                <div class="course-box">
+                <div class="course-box" data-aos="fade-down">
                     <div class="course-box__title">29 październik 2019</div>
                     <div class="course-box__location">Miejsce szkolenia</div>
                     <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="course-box">
+                <div class="course-box" data-aos="fade-down" data-aos-delay="200">
                     <div class="course-box__title">26 listopad 2019</div>
                     <div class="course-box__location">Miejsce szkolenia</div>
                     <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="course-box">
+                <div class="course-box" data-aos="fade-down" data-aos-delay="400">
                     <div class="course-box__title">1 grudzień 2019</div>
                     <div class="course-box__location">Miejsce szkolenia</div>
                     <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
@@ -51,7 +51,7 @@ export default {
 
 <style scoped lang="scss">
     .course-dates {
-        margin-top: 145px;
+        padding-top: 100px;
 
         .divider {
             margin-top: 45px;
@@ -61,7 +61,7 @@ export default {
         .course-box {
             border: 10px solid #373634;
             text-align: center;
-            min-height: 410px;
+            min-height: 460px;
             padding: 0 25px;
 
             &__title {
@@ -89,6 +89,8 @@ export default {
             }
 
             &__button {
+                padding-bottom: 20px;
+
                 p {
                     font-weight: bold;
                     font-size: 16px;
