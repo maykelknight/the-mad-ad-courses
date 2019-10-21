@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="box with-gradient" data-aos="zoom-in-up">
+        <div class="box with-gradient">
             <p class="box__symbol">@</p>
         </div>
     </div>

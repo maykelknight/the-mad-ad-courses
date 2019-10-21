@@ -1,42 +1,76 @@
 <template>
     <div class="container" id="contact-section">
         <div class="contact-section">
-            <h2>LET’S TALK TOGETHER</h2>
+            <h2 data-aos="fade-up">LET’S TALK TOGETHER</h2>
 
             <div class="row">
                 <div class="col-md-8">
-                    <form data-name="Email Form" id="email-form" method="post" name="email-form" class="contact-form">
+                    <form data-name="Email Form"
+                          id="email-form"
+                          method="post"
+                          name="email-form"
+                          class="contact-form"
+                    >
                         <div class="flex">
-                            <input id="form-name"
-                                   maxlength="256"
-                                   name="Imie"
-                                   placeholder="Imię"
-                                   required="required"
-                                   type="text"
-                                   class="form-input mr30 mb30">
-                            <input id="form-email"
-                                   maxlength="256"
-                                   name="Email"
-                                   placeholder="Email"
-                                   type="email"
-                                   class="form-input mb30">
+
+                                <input id="form-name"
+                                       v-model="name"
+                                       maxlength="256"
+                                       name="name"
+                                       placeholder="Imię"
+                                       required="required"
+                                       type="text"
+                                       class="form-input mr30 mb30"
+                                       :class="nameFieldEmpty ? 'field-error' : ''"
+                                >
+
+
+                                <input id="form-email"
+                                       maxlength="256"
+                                       name="Email"
+                                       v-model="email"
+                                       placeholder="Email"
+                                       type="email"
+                                       pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                       class="form-input mb30"
+                                       :class="emailFieldEmpty ? 'field-error' : ''"
+                                       required
+                                       @input="validateEmail"
+                                >
+
+
+
                         </div>
+
                         <textarea data-name="Tekst"
                                   id="form-text"
                                   maxlength="5000"
                                   name="Tekst"
+                                  v-model="description"
                                   placeholder="Jakie szkolenia Cię interesują?"
                                   required="required"
-                                  class="form-input text-area">
+                                  class="form-input text-area"
+                                  :class="descriptionEmpty ? 'field-error' : ''"
+                        >
                         </textarea>
-                        <input data-wait="Przesyłanie..." id="submitBtn" type="button" class="btn submit-btn" value="WYŚLIJ WIADOMOŚĆ">
 
-                        <div class="form-message">
+                        <input data-wait="Przesyłanie..."
+                               id="submitBtn" type="button"
+                               class="btn submit-btn"
+                               value="WYŚLIJ WIADOMOŚĆ"
+                               @click="validateForm"
+                        >
+
+                        <div class="form-message" v-if="messageSent">
                             Dziękujemy! Twoja wiadomość została pomyślnie dostarczona.
                         </div>
 
-                        <div class="form-message -error">
+                        <div class="form-message -error" v-if="emptyFields">
                             Coś poszło nie tak! Proszę wypełnić wszystkie obowiązkowe pola.
+                        </div>
+
+                        <div class="form-message -error" v-if="formSendError">
+                            Wystąpił problem z wysłaniem wiadomości przez formularz.
                         </div>
                     </form>
                 </div>
@@ -63,15 +97,83 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-    name: "Contact.vue"
+    name: "Contact.vue",
+    data () {
+        return {
+            errors: [],
+            name: '',
+            email: '',
+            description: '',
+            emptyFields: false,
+            messageSent: false,
+            formSendError: false,
+        }
+    },
+    methods: {
+        validateForm () {
+            this.emptyFields = false;
+            this.messageSent = false;
+            this.formSendError = false;
+            this.errors = [];
+
+            if (this.name === "") {
+                this.errors.push('nameEmpty');
+            }
+            if (this.email === "") {
+                this.errors.push('emailEmpty');
+            }
+            if (this.description === "") {
+                this.errors.push('descriptionEmpty');
+            }
+            if (this.errors.length) {
+                this.emptyFields = true;
+                return;
+            }
+
+            var form = new FormData();
+            form.append('subject', 'courses');
+            form.append('name', this.name);
+            form.append('email', this.email);
+            form.append('text', this.description);
+
+            axios.post("../../mailer.php", form)
+                .then(response => {
+                    this.messageSent = true;
+                    this.name = '';
+                    this.email = '';
+                    this.description = '';
+                    console.log('response', response);
+                })
+                .catch(e => {
+                    this.formSendError = true;
+                    console.log('error', error);
+                })
+        },
+        // validateEmail (email) {
+        //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //     return
+        //     if(re.test(String(email).toLowerCase()))
+        // };
+    },
+    computed: {
+        nameFieldEmpty () {
+            return this.errors.includes('nameEmpty') && !this.name;
+        },
+        emailFieldEmpty () {
+            return this.errors.includes('emailEmpty') && !this.email;
+        },
+        descriptionEmpty () {
+            return this.errors.includes('descriptionEmpty') && !this.description;
+        }
+    }
 }
 </script>
 
@@ -123,6 +225,11 @@ export default {
             .submit-btn {
                 margin-top: 24px;
             }
+
+            .field-error {
+                border: 2px solid #ff6161;
+                background-color: #ffdede;
+            }
         }
 
         .contact-item {
@@ -147,6 +254,8 @@ export default {
                     margin-right: 30px;
                 }
             }
+
+
         }
 
         .form-message {
@@ -163,7 +272,10 @@ export default {
                 background-color: #ffdede;
             }
         }
+
+
     }
+
     @media (max-width: $b-lg) {
         .contact-items {
             margin-top: 40px;
@@ -178,9 +290,11 @@ export default {
             h2 {
                 font-size: 50px;
             }
+
             .contact-items {
                 display: block;
             }
+
             .flex {
                 flex-direction: column;
             }

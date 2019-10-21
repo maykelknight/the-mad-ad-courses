@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <link href="" rel="stylesheet">
+    <link href="<%= BASE_URL %>favicon.png" rel="icon" type="image/png">
     <title>TheMadAd</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but the-mad-ad-course doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div class="main-content">
-      <div id="app"></div>
-    </div>
+</head>
+<body>
+<noscript>
+    <strong>We're sorry but the-mad-ad-course doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div class="main-content">
+    <div id="app"></div>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v4.0'
+        });
+    };
 
-    <!-- built files will be auto injected -->
-  </body>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your customer chat code -->
+    <div attribution=setup_tool
+         class="fb-customerchat"
+         logged_in_greeting="Hi! How can we help you?"
+         logged_out_greeting="Hi! How can we help you?"
+         page_id="104218851005033"
+         theme_color="#ffc300">
+    </div>
+</div>
+
+<!-- built files will be auto injected -->
+</body>
 </html>
