@@ -12,34 +12,29 @@
                           class="contact-form"
                     >
                         <div class="flex">
+                            <input id="form-name"
+                                   v-model="name"
+                                   maxlength="256"
+                                   name="name"
+                                   placeholder="Imię"
+                                   required="required"
+                                   type="text"
+                                   class="form-input mr30 mb30"
+                                   :class="nameFieldEmpty ? 'field-error' : ''"
+                            >
 
-                                <input id="form-name"
-                                       v-model="name"
-                                       maxlength="256"
-                                       name="name"
-                                       placeholder="Imię"
-                                       required="required"
-                                       type="text"
-                                       class="form-input mr30 mb30"
-                                       :class="nameFieldEmpty ? 'field-error' : ''"
-                                >
-
-
-                                <input id="form-email"
-                                       maxlength="256"
-                                       name="Email"
-                                       v-model="email"
-                                       placeholder="Email"
-                                       type="email"
-                                       pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                                       class="form-input mb30"
-                                       :class="emailFieldEmpty ? 'field-error' : ''"
-                                       required
-                                       @input="validateEmail"
-                                >
-
-
-
+                            <input id="form-email"
+                                   maxlength="256"
+                                   name="Email"
+                                   v-model="email"
+                                   placeholder="Email"
+                                   type="email"
+                                   pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                   class="form-input mb30"
+                                   :class="emailFieldEmpty ? 'field-error' : ''"
+                                   required
+                                   @input="validateEmail"
+                            >
                         </div>
 
                         <textarea data-name="Tekst"
