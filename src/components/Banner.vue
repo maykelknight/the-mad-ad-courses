@@ -9,7 +9,9 @@
                             Szkolenia z pazurem
                         </h1>
                         <div class="banner-heading__button">
-                            <button type="button" class="btn">Wybierz termin szkoleń</button>
+                            <button type="button" class="btn">
+                                <a class="btn" href="#course-dates">Wybierz termin szkoleń</a>
+                            </button>
                         </div>
                     </div>
                 </div>

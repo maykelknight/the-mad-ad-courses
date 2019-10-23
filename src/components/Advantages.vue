@@ -1,5 +1,4 @@
 <template>
-
     <div class="advantages-wrapper">
         <div class="gradient-border"></div>
         <div class="advantages">
@@ -12,7 +11,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="advantages__description__wrapper">
-                            <div class="advantages__description" data-aos="fade-left">
+                            <div class="advantages__description">
                                 <h5 class="advantages__description__title">
                                     Dlaczego warto szkolić się u nas?
                                 </h5>
@@ -26,9 +25,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
         <div class="gradient-border"></div>
     </div>

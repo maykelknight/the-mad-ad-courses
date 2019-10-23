@@ -1,5 +1,5 @@
 <template>
-    <div class="container team-section" id="team-section">
+    <div class="container team-section" id="team">
         <h3>POZNAJ NASZE PROWADZĄCE</h3>
         <div class="divider"></div>
 
@@ -7,64 +7,22 @@
 
             <div class="team-members-wrapper">
 
-                <div class="team-member">
+                <div class="team-member" v-for="(trainer, index) in trainers"
+                     :class="{'-right': index % 2 === 1}"
+                >
                     <div class="team-member__photo" data-aos="fade-left" >
-                        <img alt="team-member" src="../assets/images/daria.png">
-                    </div>
-                    <div class="team-member__description"  data-aos="fade-right"  >
-                        <div class="team-member__description__wrapper">
-                            <p class="team-member__description__name">
-                                Daria Śliż
-                            </p>
-
-                            <p class="team-member__description__position">
-                                Co-founder at The Mad Ad
-                            </p>
-                            <p class="team-member__description__details">
-                                Specjalizuje się w kreatywnym planowaniu i wdrażaniu strategii obecności w social mediach oraz optymalizacji kampanii reklamowych online. Z pasją odkrywa tajniki z
-                                zakresu psychologii sprzedaży i marketingu, a potem sprytnie wykorzystuje je w komunikacji z konsumentem. Wulkan energii. Myśli szybko, jeszcze szybciej realizuje to, co
-                                wymyśliła. Pomysły nie mieszczą się w jej głowie, co tłumaczy burzę loków.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member -right">
-                    <div class="team-member__description">
-                        <div class="team-member__description__wrapper"  data-aos="fade-left" >
-                            <p class="team-member__description__name">
-                                Magdalena Nykiel
-                            </p>
-                            <p class="team-member__description__position">
-                                Co-founder at The Mad Ad
-                            </p>
-                            <p class="team-member__description__details">
-                                Facebook, Instagram i inne takie nie mają przed nią tajemnic. Specjalistka od niestandardowych akcji reklamowych. Z przyjemnością planuje i skutecznie realizuje kampanie
-                                reklamowe w social mediach, redaguje content, zarządza społecznościami. Czego nie robi? Nie owija w bawełnę. Książkoholiczka.
-                                Jest w stanie wydać ostatnie oszczędności na książki, dlatego lepiej nie pożyczać jej pieniędzy, gdy stoi przed księgarnią.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="team-member__photo" data-aos="fade-right" >
-                        <img alt="team-member" src="../assets/images/magda.png">
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="team-member__photo" data-aos="fade-left" >
-                        <img alt="team-member" src="../assets/images/róża.png">
+                        <img alt="team-member" :src="trainer.photo">
                     </div>
                     <div class="team-member__description" data-aos="fade-right">
                         <div class="team-member__description__wrapper">
                             <p class="team-member__description__name">
-                                Róża Klimczak
+                                {{trainer.name}} {{trainer.surname}}
                             </p>
+
                             <p class="team-member__description__position">
-                                Marketing Manager at The Mad Ad
+                                {{trainer.position}}
                             </p>
-                            <p class="team-member__description__details">
-                                Pisze odkąd pamięta. Kiedyś kredkami po ścianie, później wiersze, dzisiaj do sieci. Woli, gdy przecinki stoją na swoim miejscu, a słowa kluczowe nie gryzą.
-                                Doktor nauk humanistycznych, językoznawca. Bez względu na swoje dzisiejsze plany, jest w stanie upiec na jutro brownie z wiśniami.
+                            <p class="team-member__description__details" v-html="trainer.description">
                             </p>
                         </div>
                     </div>
@@ -76,7 +34,10 @@
 
 <script>
 export default {
-    name: "Team"
+    name: "Team",
+    props: {
+        trainers: Array
+    }
 }
 </script>
 

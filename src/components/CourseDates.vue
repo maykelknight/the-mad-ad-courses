@@ -1,41 +1,22 @@
 <template>
-    <div class="container course-dates" id="course-dates-section" >
+    <div class="container course-dates" id="course-dates">
         <h3>TERMINY NAJBLIŻSZYCH SZKOLEŃ</h3>
         <div class="divider"></div>
         <div class="row row-eq-height">
-            <div class="col-md-4">
-                <div class="course-box" data-aos="fade-down">
-                    <div class="course-box__title">29 październik 2019</div>
-                    <div class="course-box__location">Miejsce szkolenia</div>
-                    <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
-                        orci, id tempor tortor eros vestibulum justo.
+            <div class="col-md-4" v-for="(course, index) in upcomingCourses"
+
+            >
+                <div class="course-box" data-aos="fade-down" :data-aos-delay="index*200">
+                    <div class="course-box__title">{{course.date}}</div>
+                    <div class="course-box__location">{{course.location}}</div>
+                    <div class="course-box__description">
+                        {{course.description}}
                     </div>
                     <div class="course-box__button">
-                        <p>BRAK WOLNYCH MIEJC!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="course-box" data-aos="fade-down" data-aos-delay="200">
-                    <div class="course-box__title">26 listopad 2019</div>
-                    <div class="course-box__location">Miejsce szkolenia</div>
-                    <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
-                        orci, id tempor tortor eros vestibulum justo.
-                    </div>
-                    <div class="course-box__button">
-                        <button class="btn">Zarezerwuj miejsce</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="course-box" data-aos="fade-down" data-aos-delay="400">
-                    <div class="course-box__title">1 grudzień 2019</div>
-                    <div class="course-box__location">Miejsce szkolenia</div>
-                    <div class="course-box__description">Kilka słów o szkoleniu. Nulla ac egestas odio. Mauris auctor ultrices bibendum. Nunc volutpat, leo et auctor pretium, felis augue dignissim
-                        orci, id tempor tortor eros vestibulum justo.
-                    </div>
-                    <div class="course-box__button">
-                        <button class="btn">Zarezerwuj miejsce</button>
+                        <button class="btn" v-if="course.availability">
+                            <a href="#contact">Zarezerwuj miejsce</a>
+                        </button>
+                        <p v-else>BRAK WOLNYCH MIEJC!</p>
                     </div>
                 </div>
             </div>
@@ -44,8 +25,12 @@
 </template>
 
 <script>
+
 export default {
-    name: "CourseDates"
+    name: "CourseDates",
+    props: {
+        upcomingCourses: Array
+    }
 }
 </script>
 
@@ -63,6 +48,7 @@ export default {
             text-align: center;
             min-height: 460px;
             padding: 0 25px;
+            margin-bottom: 30px;
 
             &__title {
                 font-weight: bold;
@@ -103,6 +89,7 @@ export default {
             }
         }
     }
+
     @media (max-width: $b-lg) {
         .course-dates {
             .course-box {

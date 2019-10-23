@@ -1,5 +1,5 @@
 <template>
-    <div class="container" id="services-section">
+    <div class="container" id="services">
 
         <div class="banner-description">
             <p>{{description}}</p>

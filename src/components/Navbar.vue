@@ -7,23 +7,27 @@
                 </div>
                 <ul class="links">
                     <li>
-                        <a href="#services-section">Oferta</a>
+                        <a href="#services">Oferta</a>
                     </li>
                     <li>
-                        <a href="#course-dates-section">Terminy szkoleń</a>
+                        <a href="#course-dates">Terminy szkoleń</a>
                     </li>
                     <li>
-                        <a href="#team-section">Prowadzące</a>
+                        <a href="#team">Prowadzące</a>
                     </li>
                     <li>
-                        <a href="#contact-section">Kontakt</a>
+                        <a href="#contact">Kontakt</a>
                     </li>
                 </ul>
             </div>
 
             <div class="social-icons pull-right">
-                <img alt="facebook-logo" class="facebook-logo" src="../assets/images/facebook.svg">
-                <img alt="instagram-logo" class="instagram-logo" src="../assets/images/instagram.svg">
+                <a href="https://www.facebook.com/agencjathemadad" target="_blank">
+                    <img alt="facebook-logo" class="facebook-logo" src="../assets/images/facebook.svg">
+                </a>
+                <a href="https://www.instagram.com/agencja_themadad/" target="_blank">
+                    <img alt="instagram-logo" class="instagram-logo" src="../assets/images/instagram.svg">
+                </a>
             </div>
 
             <div class="hamburger"
@@ -60,13 +64,13 @@
 
 <script>
 export default {
-    data() {
+    data () {
         return {
             navLinksVisible: false
         }
     },
     methods: {
-        toggleNavLinksVisibility() {
+        toggleNavLinksVisibility () {
             this.navLinksVisible = !this.navLinksVisible;
         }
     }
@@ -106,7 +110,6 @@ export default {
     }
 
 
-
     .nav-wrapper {
         display: flex;
         align-items: center;
@@ -129,6 +132,7 @@ export default {
                     font-weight: 400;
                     line-height: 27px;
                     margin-right: 45px;
+
                     a {
                         color: #fff;
                         text-decoration: none;
@@ -150,6 +154,7 @@ export default {
 
     .mobile-navigation {
         display: none;
+
         .mobile-links {
             list-style-type: none;
             text-transform: uppercase;
@@ -157,9 +162,11 @@ export default {
             border-top: 1px solid #363636;
             border-bottom: 1px solid #363636;
             margin-bottom: -40px;
+
             li {
                 margin-bottom: 10px;
                 font-size: 22px;
+
                 a {
                     color: #fff;
                     text-decoration: none;
@@ -175,7 +182,7 @@ export default {
         .nav-wrapper {
             .links-wrapper {
                 .links {
-                 display: none;
+                    display: none;
                 }
             }
 

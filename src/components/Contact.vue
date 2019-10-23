@@ -1,5 +1,5 @@
 <template>
-    <div class="container" id="contact-section">
+    <div class="container" id="contact">
         <div class="contact-section">
             <h2 data-aos="fade-up">LET’S TALK TOGETHER</h2>
 
@@ -85,8 +85,12 @@
                         <div class="divider"></div>
                         <div class="contact-item__value">
                             <div class="social-icons">
-                                <img alt="facebook-logo" class="facebook-logo" src="../assets/images/facebook.svg">
-                                <img alt="instagram-logo" class="instagram-logo" src="../assets/images/instagram.svg">
+                                <a href="https://www.facebook.com/agencjathemadad" target="_blank">
+                                    <img alt="facebook-logo" class="facebook-logo" src="../assets/images/facebook.svg">
+                                </a>
+                                <a href="https://www.instagram.com/agencja_themadad/" target="_blank">
+                                    <img alt="instagram-logo" class="instagram-logo" src="../assets/images/instagram.svg">
+                                </a>
                             </div>
                         </div>
                     </div>

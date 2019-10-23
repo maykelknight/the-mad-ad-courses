@@ -1,11 +1,10 @@
 <template>
     <div class="testimonials">
 
-
         <h3>KILKA SŁÓW OD NASZYCH KLIENTÓW</h3>
         <div class="divider"></div>
 
-        <div class="testimonials-slider-wrapper" data-aos="zoom-in">
+        <div class="testimonials-slider-wrapper">
             <img alt="chevron-icon-left"
                  class="chevron -left"
                  src="../assets/images/chevron-right.svg"
@@ -16,43 +15,24 @@
                  src="../assets/images/chevron-right.svg"
                  @click="nextSlide()"
             >
-
             <tiny-slider :mouse-drag="true"
                          loop
                          items="1"
                          gutter="20"
                          ref="tinySlider"
                          autoplay
-
             >
-                <div class="testimonial">
+                <div class="testimonial" v-for="testimonial in testimonials">
                     <div class="testimonial__details">
-                        <img alt="testimonial-image" class="testimonial__details__logo" src="../assets/images/Kamuglafe.png">
-                        <p class="testimonial__details__description">
-                            "Wiedza ze szkoleń, już po kilku dniach od zastosowania pozwoliła uzyskać realną poprawę w wynikach wszystkich kampanii, które prowadzimy.
-                            Wiedza jest przekazywana w bardzo zrozumiały sposób, a Pani Daria zawsze cierpliwie odpowiada na wszystkie pytania z naszej strony."
-                        </p>
-                        <p class="testimonial__details__person">Paweł Raj</p>
-                        <p class="testimonial__details__company">KAMUFLAGE</p>
-                    </div>
-                    <div class="border"></div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial__details">
-                        <img alt="testimonial-image" class="testimonial__details__logo" src="../assets/images/Kamuglafe.png">
-                        <p class="testimonial__details__description">
-                            "Wiedza ze szkoleń, już po kilku dniach od zastosowania pozwoliła uzyskać realną poprawę w wynikach wszystkich kampanii, które prowadzimy.
-                            "Wiedza ze szkoleń, już po kilsDaria zawsze cierpliwie odpowiada na wszystkie pytania z naszej strony."
-                        </p>
-                        <p class="testimonial__details__person">Paweł Raj</p>
-                        <p class="testimonial__details__company">KAMUFLAGE</p>
+                        <img alt="testimonial-image" class="testimonial__details__logo" :src="testimonial.logo">
+                        <p class="testimonial__details__description" v-html="testimonial.description"></p>
+                        <p class="testimonial__details__person">{{testimonial.name}} {{testimonial.surname}}</p>
+                        <p class="testimonial__details__company">{{testimonial.company}}</p>
                     </div>
                     <div class="border"></div>
                 </div>
             </tiny-slider>
         </div>
-
-
     </div>
 </template>
 
@@ -62,6 +42,9 @@ import VueTinySlider from 'vue-tiny-slider';
 
 export default {
     name: "Testimonials",
+    props: {
+      testimonials: Array
+    },
     components: {
         'tiny-slider': VueTinySlider
     },
@@ -83,7 +66,7 @@ export default {
         height: 1130px;
         background-size: cover;
         background: url('~@/assets/images/Bcq_baloon.jpg') no-repeat 50% 0;
-        margin-top: 256px;
+        margin-top: 226px;
 
         .divider {
             margin-top: 45px;

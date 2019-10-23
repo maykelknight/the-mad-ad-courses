@@ -2,15 +2,13 @@
     <div id="app">
         <Navbar></Navbar>
         <Banner></Banner>
-
         <Services :description="servicesList.description"
-                  :services="servicesList.services">
-        </Services>
-
-        <CourseDates></CourseDates>
-        <Testimonials></Testimonials>
+                  :services="servicesList.services"
+        />
+        <CourseDates :upcomingCourses="upcomingCourses"/>
+        <Testimonials :testimonials="testimonialList"/>
         <Advantages></Advantages>
-        <Team></Team>
+        <Team :trainers="trainerList"/>
         <Contact></Contact>
         <Footer></Footer>
     </div>
@@ -28,7 +26,9 @@ import Footer from "./components/Footer"
 import Testimonials from "./components/Testimonials"
 
 import * as contentful from 'contentful';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import {documentToHtmlString} from '@contentful/rich-text-html-renderer';
+import dayjs from 'dayjs';
+import 'dayjs/locale/pl' // load on demand
 
 const client = contentful.createClient({
     space: "92abtkis4brm",
@@ -37,12 +37,15 @@ const client = contentful.createClient({
 
 export default {
     name: 'app',
-    data() {
+    data () {
         return {
             servicesList: {
                 description: '',
                 services: []
             },
+            upcomingCourses: [],
+            testimonialList: [],
+            trainerList: [],
             contentfulRichTextOptions: {
                 renderNode: {
                     'embedded-asset-block': (node) =>
@@ -51,29 +54,59 @@ export default {
             }
         }
     },
-    mounted() {
+    mounted () {
         this.parseServicesList();
         this.parseUpcomingCourses();
+        this.parseTestimonialList();
+        this.parseTrainerList();
     },
     methods: {
-        parseUpcomingCourses() {
-            client.getEntries({content_type: 'upcominCourses'}).then(response => {
+        parseTrainerList () {
+            client.getEntries({content_type: 'trainerList'}).then(response => {
                 const fields = response.items[0].fields;
-                console.log('response', fields);
-                const upcomingCourses = fields.upcomingCourses.map(service => {
+                console.log('fields', fields);
+                const trainers = fields.trainer.map(service => {
                     return {
-                        availability: service.fields.availability,
-                        date: service.fields.date,
-                        pricing: service.fields.pricing,
-                        icon: this.getFileLink(service.fields.icon),
-                        description: documentToHtmlString(service.fields.description, this.contentfulRichTextOptions)
+                        name: service.fields.name,
+                        surname: service.fields.surname,
+                        position: service.fields.position,
+                        description: documentToHtmlString(service.fields.description, this.contentfulRichTextOptions),
+                        photo: this.getFileLink(service.fields.photo)
                     };
                 });
-
-                this.servicesList = parsedResponse;
+                this.trainerList = trainers;
             });
         },
-        parseServicesList() {
+        parseUpcomingCourses () {
+            client.getEntries({content_type: 'upcominCourses'}).then(response => {
+                const fields = response.items[0].fields;
+                const upcomingCourses = fields.upcomingCourse.map(service => {
+                    return {
+                        availability: service.fields.availability,
+                        date: dayjs(service.fields.date).locale('pl').format('D MMMM YYYY'),
+                        description: service.fields.description,
+                        location: service.fields.location
+                    };
+                });
+                this.upcomingCourses = upcomingCourses;
+            });
+        },
+        parseTestimonialList () {
+            client.getEntries({content_type: 'testimonialList'}).then(response => {
+                const fields = response.items[0].fields;
+                const testimonialList = fields.testimonial.map(service => {
+                    return {
+                        company: service.fields.company,
+                        name: service.fields.name,
+                        surname: service.fields.surname,
+                        logo: this.getFileLink(service.fields.logo),
+                        description: documentToHtmlString(service.fields.description, this.contentfulRichTextOptions),
+                    };
+                });
+                this.testimonialList = testimonialList;
+            });
+        },
+        parseServicesList () {
             client.getEntries({content_type: 'servicesList'}).then(response => {
                 const fields = response.items[0].fields;
                 let parsedResponse = {};
@@ -91,7 +124,7 @@ export default {
                 this.servicesList = parsedResponse;
             });
         },
-        getFileLink(content) {
+        getFileLink (content) {
             return content.fields.file.url;
         }
     },
