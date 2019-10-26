@@ -69,7 +69,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-3 col-md-offset-1 contact-items" data-aos="fade-left">
+                <div class="col-md-3 col-md-offset-1 contact-items">
                     <div class="contact-item">
                         <div class="contact-item__label">NUMER KONTAKTOWY</div>
                         <div class="divider"></div>

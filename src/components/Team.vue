@@ -10,7 +10,7 @@
                 <div class="team-member" v-for="(trainer, index) in trainers"
                      :class="{'-right': index % 2 === 1}"
                 >
-                    <div class="team-member__photo" data-aos="fade-left" >
+                    <div class="team-member__photo" data-aos="fade-left">
                         <img alt="team-member" :src="trainer.photo">
                     </div>
                     <div class="team-member__description" data-aos="fade-right">
@@ -47,6 +47,7 @@ export default {
         padding-top: 100px;
         margin-bottom: 96px;
     }
+
     .box-background {
         border: 10px solid $c-gray2;
         max-width: 800px;
@@ -150,6 +151,7 @@ export default {
                     &__name {
                         line-height: 50px;
                     }
+
                     &__details {
                         width: 100%;
                         max-width: 600px;
@@ -158,7 +160,7 @@ export default {
 
 
                 &.-right {
-                    flex-direction: column-reverse;
+                    flex-direction: column;
 
                     .team-member__photo {
                         position: relative;
@@ -176,10 +178,7 @@ export default {
                         max-width: initial;
                     }
                 }
-
-
             }
         }
     }
-
 </style>

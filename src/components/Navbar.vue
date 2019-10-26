@@ -45,16 +45,16 @@
             </div>
             <ul class="mobile-links" v-if="navLinksVisible">
                 <li>
-                    <a href="#services-section">Oferta</a>
+                    <a href="#services">Oferta</a>
                 </li>
                 <li>
-                    <a href="#course-dates-section">Terminy szkoleń</a>
+                    <a href="#course-dates">Terminy szkoleń</a>
                 </li>
                 <li>
-                    <a href="#team-section">Prowadzące</a>
+                    <a href="#team">Prowadzące</a>
                 </li>
                 <li>
-                    <a href="#contact-section">Kontakt</a>
+                    <a href="#contact">Kontakt</a>
                 </li>
             </ul>
         </div>
