@@ -1,28 +1,36 @@
 <template>
-    <section class="container banner">
-
-        <div class="row row-no-gutters banner__main-content">
-            <div class="col-md-6 col-sm-6">
-                <div class="banner-heading-wrapper">
-                    <div class="banner-heading">
-                        <h1 class="banner-heading__text">
-                            Szkolenia z pazurem
-                        </h1>
-                        <div class="banner-heading__button">
-                            <button type="button" class="btn">
-                                <a class="btn" href="#course-dates">Wybierz termin szkoleń</a>
-                            </button>
+    <section class="banner-wrapper">
+        <div class="container banner">
+            <div class="row row-no-gutters banner__main-content">
+                <div class="col-md-6 col-sm-6">
+                    <div class="banner-heading-wrapper">
+                        <div class="banner-heading">
+                            <h1 class="banner-heading__text">
+                                Szkolenia z pazurem
+                            </h1>
+                            <div class="banner-heading__button">
+                                <button type="button" class="btn">
+                                    <a class="btn" href="#course-dates">Wybierz termin szkoleń</a>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="box" data-aos="zoom-out-up">
-                    <p class="box__text">#be_mad</p>
+                <div class="col-md-6 col-sm-6">
+
+                    <div class="logo">
+
+                        <img alt="mad-ad-logo" src="../assets/images/pazur.svg" data-aos="zoom-out-up">
+                    </div>
+
+                    <!--                <div class="box" data-aos="zoom-out-up">-->
+                    <!--                    <p class="box__text">#be_mad</p>-->
+                    <!--                </div>-->
                 </div>
             </div>
         </div>
     </section>
+
 </template>
 
 <script>
@@ -33,6 +41,11 @@ export default {
 
 
 <style scoped lang="scss">
+
+    .banner-wrapper {
+        background: url('~@/assets/images/pattern.svg');
+        background-repeat: no-repeat;
+    }
 
     .banner {
         margin-top: 75px;
@@ -60,28 +73,31 @@ export default {
             }
         }
 
-        .box {
-            width: 570px;
-            height: 570px;
-            background: linear-gradient(270deg, $c-primary, $c-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
-            &__text {
-                font-size: 90px;
-                font-weight: 400;
-                letter-spacing: -2.647059px;
-                color: $c-black;
+        .logo {
+            margin-left: 120px;
+            margin-top: -105px;
+
+            img {
+                max-width: 622px;
+                max-height: 756px;
             }
         }
 
-
     }
-
 
     @media (max-width: $b-xl) {
         .banner {
+            .logo {
+                margin-left: 0;
+                margin-top: -50px;
+                padding: 0 20px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
             .banner-heading-wrapper {
                 height: 370px;
 
@@ -93,9 +109,11 @@ export default {
                     }
                 }
             }
+
             .box {
                 width: 370px;
                 height: 370px;
+
                 &__text {
                     font-size: 78px;
                 }
@@ -104,8 +122,10 @@ export default {
     }
 
 
-
     @media (max-width: $b-md) {
+        .banner-wrapper {
+            background-repeat: repeat-y;
+        }
         .banner {
             &__main-content {
                 display: flex;
@@ -114,6 +134,7 @@ export default {
 
             .banner-heading-wrapper {
                 height: auto;
+
                 .banner-heading {
                     text-align: center;
                     margin: 45px auto 0;

@@ -56,6 +56,7 @@ export default {
         }
     },
     mounted () {
+
         this.parseServicesList();
         this.parseUpcomingCourses();
         this.parseTestimonialList();

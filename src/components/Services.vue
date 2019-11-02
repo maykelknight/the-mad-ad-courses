@@ -29,10 +29,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="box with-gradient">
-            <p class="box__symbol">@</p>
-        </div>
     </div>
 </template>
 
@@ -51,6 +47,7 @@ export default {
     .service {
         display: flex;
         margin-top: 150px;
+        margin-bottom: 100px;
     }
 
     .banner-description {
@@ -101,23 +98,6 @@ export default {
         }
 
 
-    }
-    .box {
-        height: 358px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 165px;
-        margin-bottom: 45px;
-
-        &__symbol {
-            font-style: normal;
-            font-weight: bold;
-            font-size: 230px;
-            line-height: 278px;
-            letter-spacing: -6.76471px;
-            color: $c-black;
-        }
     }
 
     @media (max-width: $b-md) {

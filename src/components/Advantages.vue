@@ -3,26 +3,17 @@
         <div class="gradient-border"></div>
         <div class="advantages">
             <div class="container">
-                <div class="row row-no-gutters">
-                    <div class="col-md-5">
-                        <div class="box with-gradient">
-                            <img alt="question-marks-icon" src="../assets/images/question-marks.svg">
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="advantages__description__wrapper">
-                            <div class="advantages__description">
-                                <h5 class="advantages__description__title">
-                                    Dlaczego warto szkolić się u nas?
-                                </h5>
-                                <ul>
-                                    <li>szkolimy w małych grupach szkoleniowych (maksymalnie do 5 osób),</li>
-                                    <li>podczas szkolenia odwołujemy się do przykładów z konkretnych branż uczestników szkolenia,</li>
-                                    <li>zaproponujemy Ci pomysły do wykorzystania na Twoim biznesowym profilu i krok po kroku wyjaśnimy, jak je zrealizować,</li>
-                                    <li>będziemy wspierać Cię w Twoich działaniach w social mediach przez miesiąc po zakończeniu szkolenia.</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="advantages__description__wrapper">
+                    <div class="advantages__description">
+                        <h5 class="advantages__description__title">
+                            Dlaczego warto szkolić się u nas?
+                        </h5>
+                        <ul>
+                            <li>szkolimy w małych grupach szkoleniowych (maksymalnie do 5 osób),</li>
+                            <li>podczas szkolenia odwołujemy się do przykładów z konkretnych branż uczestników szkolenia,</li>
+                            <li>zaproponujemy Ci pomysły do wykorzystania na Twoim biznesowym profilu i krok po kroku wyjaśnimy, jak je zrealizować,</li>
+                            <li>będziemy wspierać Cię w Twoich działaniach w social mediach przez miesiąc po zakończeniu szkolenia.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -46,15 +37,17 @@ export default {
     .advantages {
         background: $c-gray-dark;
         height: 561px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &__description {
-            margin-left: 20px;
+
+            margin-top: 30px;
 
             &__wrapper {
-                height: 561px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                max-width: 650px;
+                margin: 0 auto;
             }
 
             &__title {
@@ -102,39 +95,13 @@ export default {
         position: relative;
     }
 
-    .box {
-        width: 440px;
-        height: 742px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-        position: relative;
-        transform: translateY(-90px);
-    }
-
     @media (max-width: $b-xl) {
-        .box {
-            height: 571px;
-            width: initial;
-            transform: none;
-        }
         .advantages {
             height: auto
         }
     }
 
     @media (max-width: $b-sm) {
-        .box {
-            width: auto;
-            height: 250px;
-
-            img {
-                width: 100%;
-                max-width: 250px;
-            }
-        }
-
         .advantages {
             &__description {
                 margin-top: 30px;

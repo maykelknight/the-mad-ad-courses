@@ -6,19 +6,22 @@
             <div class="col-md-4" v-for="(course, index) in upcomingCourses"
 
             >
-                <div class="course-box" data-aos="fade-down" :data-aos-delay="index*200">
-                    <div class="course-box__title">{{course.date}}</div>
-                    <div class="course-box__location">{{course.location}}</div>
-                    <div class="course-box__description">
-                        {{course.description}}
-                    </div>
-                    <div class="course-box__button">
-                        <button class="btn" v-if="course.availability">
-                            <a href="#contact">Zarezerwuj miejsce</a>
-                        </button>
-                        <p v-else>BRAK WOLNYCH MIEJC!</p>
+                <div class="course-box__wrapper">
+                    <div class="course-box" data-aos="fade-down" :data-aos-delay="index*200">
+                        <div class="course-box__title">{{course.date}}</div>
+                        <div class="course-box__location">{{course.location}}</div>
+                        <div class="course-box__description">
+                            {{course.description}}
+                        </div>
+                        <div class="course-box__button">
+                            <button class="btn" v-if="course.availability">
+                                <a href="#contact">Zarezerwuj miejsce</a>
+                            </button>
+                            <p v-else>BRAK WOLNYCH MIEJSC!</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -36,11 +39,19 @@ export default {
 
 <style scoped lang="scss">
     .course-dates {
-        padding-top: 100px;
+        padding-top: 120px;
 
         .divider {
             margin-top: 45px;
             margin-bottom: 70px;
+        }
+
+        .course-box__wrapper {
+            transition: all 0.4s;
+
+            &:hover {
+                transform: translateY(-20px);
+            }
         }
 
         .course-box {
@@ -56,6 +67,10 @@ export default {
                 line-height: 27px;
                 margin-top: 46px;
                 margin-bottom: 25px;
+                transition: all 2s;
+                &:hover {
+                    background: #666666;
+                }
             }
 
             &__location {

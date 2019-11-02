@@ -38,10 +38,23 @@ h1, h2, h3, h4, h5 {
 
 html {
   scroll-behavior: smooth;
+  outline: none;
+}
+
+.section, .container {
+  outline: none;
 }
 
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter', 'Inter var', sans-serif; }
+}
+
+html {
+  /* CSS custom property for the polyfill */
+  --scroll-behavior: smooth;
+
+  /* Normal CSS property for browsers with native support */
+  scroll-behavior: smooth;
 }
 
 .row-no-padding {

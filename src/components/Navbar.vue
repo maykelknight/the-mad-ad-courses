@@ -3,7 +3,9 @@
         <div class="nav-wrapper">
             <div class="links-wrapper">
                 <div class="logo">
-                    <img alt="mad-ad-logo" src="../assets/images/logo.svg">
+                    <a href="https://www.themadad.pl">
+                        <img alt="mad-ad-logo" src="../assets/images/logo.svg">
+                    </a>
                 </div>
                 <ul class="links">
                     <li>
@@ -136,6 +138,10 @@ export default {
                     a {
                         color: #fff;
                         text-decoration: none;
+
+                        &:hover {
+                            color: $c-secondary;
+                        }
                     }
                 }
             }
